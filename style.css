@@ -1,0 +1,89 @@
+body{
+    background-image: url("back.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.white{
+    color: white;
+    font-size: 2vw;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.homeOption{
+    margin: 7% 0 7% 0;
+    cursor: pointer;
+    padding: 2% 0 2% 0;
+}
+.homeOption:hover{
+    color:aqua;
+}
+#goTohome{
+    background-image: url('logo.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    opacity: 100%;
+    border: none;
+}
+.prompt{
+    width: max-content;
+    margin: auto;
+    align-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 75%);
+    border-radius: 5px;
+    padding:20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5vw;
+}
+#addname, #loguser{
+    font-size: 1.5vw;
+    width: 60%;
+}
+#addcategory{
+    font-size: 1.5vw;
+    width: 60%;
+}
+#addTable, #sTable{
+    margin: 10px 0px 10px 0;
+    width: 100%;
+    align-content: center;
+}
+#addTable td,th{
+    overflow-wrap: break-word;
+    text-align: center;
+    border:1pt solid black;
+}
+#sTable td,th{
+    overflow-wrap: break-word;
+    text-align: center;
+    border:1pt solid black;
+}
+section{
+    display: none;
+}
+.DataRow{
+    cursor: pointer;
+}
+.DataRow:hover{
+    background-color: aquamarine;
+}
+#SavedContainer{
+    padding: 15px;
+    width: 90%;
+    margin: auto;
+    border: 1pt solid aquablue;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 75%);
+}
+#savedPswd{
+    width: 95%;
+    margin: auto;
+}
+#savedPswd td, tr, th{
+    text-align: center;
+    font-size: 1vw;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta lang="en-US">
+        <link rel="icon" href="logo.webp">
+        <link rel="stylesheet" href="style.css">
+        <title>Password Manager</title>
+        <script src="crypto.js"></script>
+        <script src="data.js"></script>
+        <script src="src.js"></script>
+    </head>
+    <body>
+        <button id="goTohome" onclick="viewSection('home')"></button>
+        <div id="loginPage" class="prompt">
+            <label>Username : &Tab;</label><input type="text" id="loguser"><br>
+            <label>Password &ThickSpace;&VeryThinSpace;: &Tab;</label><input type="password" id="logpass" style="font-size: 1.5vw;width: 60%;"><br>
+            <button onclick="loginCheck()" 
+            style="margin: auto; position: relative;left: 50%;translate: -50%;font-size: 3vw;background-color: rgb(142, 243, 247);cursor: pointer;padding: 10px;margin-top: 15px;">
+            Login</button>
+        </div>
+        
+        <section id="home">
+            <img src="logo.webp" alt="LOGO IMAGE" height="35%" width="35%" style="float: right;margin-right: 10%;margin-top: 5%;">
+            <div style="float: left;margin-left: 10%;margin-top: 10%;">
+                <div onclick="viewSection('new')" class="white homeOption">Add Passwords</div>
+                <div onclick="viewSection('search')" class="white homeOption">Search Passwords</div>
+                <div onclick="downloadData()" class="white homeOption">Download Database</div>
+                <div onclick="logoutUser()" class="white homeOption">Logout</div>
+            </div>
+        </section>
+        
+        <section id="new">
+            <div class="prompt">
+                <label>Name : &Tab;</label><input type="text" id="addname" size="20"><br>
+                <label>Category : &Tab;</label>
+                <select id="addcategory">
+                    <option>Other</option>
+                    <option>Banks</option>
+                    <option>IIT Kanpur</option>
+                    <option>Entertainment</option>
+                    <option>Personal</option>
+                    <option>Logins</option>
+                    <option>Important Info</option>
+                </select><br>
+                <label>Encryption Key : &Tab;</label><input type="password" id="addkey" style="font-size: 1.5vw;" size="8"><br>
+                <table contenteditable="True" id="addTable" cellspacing="0">
+                    <tr><th contenteditable="false">Field</th><th contenteditable="false">Value</th></tr>
+                    <tr><td>&ZeroWidthSpace;</td><td>&ZeroWidthSpace;</td></tr>
+                </table>
+                <button onclick="document.getElementById('addTable').innerHTML+='<tr><td>&ZeroWidthSpace;</td><td>&ZeroWidthSpace;</td></tr>'" 
+                    style="margin: auto; position: relative;left: 50%;translate: -50%;font-size: 3vw;background-color: rgb(142, 243, 247);border-radius: 50%;cursor: pointer;">
+                    &MediumSpace;&plus;&MediumSpace;</button><br>
+                <button onclick="savePassword()" 
+                        style="margin: auto; position: relative;left: 50%;translate: -50%;font-size: 3vw;background-color: rgb(142, 243, 247);cursor: pointer;padding: 10px;margin-top: 15px;">
+                        Save</button>
+                </div>
+        </section>
+
+        <section id="search">
+            <div id="SavedContainer">
+                <table id="savedPswd" cellspacing="0">
+                    <tr><th>Name</th><th>Category</th><th>Saved On</th></tr>
+                </table>
+            </div>
+            <div id="searchedpsd" class="prompt" style="display: none;">
+                <label>Name : &Tab;</label><label id="sname"></label><br>
+                <label>Category : &Tab;</label><label id="scategory"></label><br>
+                <label>Saved On : &Tab;</label><label id="sdate"></label><br>
+                <label>Decryption Key : &Tab;</label><input type="password" id="deckey" style="font-size: 1.5vw;" size="8"><br>
+                <table id="sTable" cellspacing="0"></table>
+                <button onclick="decryptPassword()"
+                style="margin: auto; position: relative;left: 50%;translate: -50%;font-size: 3vw;background-color: rgb(142, 243, 247);cursor: pointer;padding: 10px;margin-bottom: 15px;">
+                Decrypt</button><br>
+                <button onclick="closeSearch()" 
+                    style="margin: auto; position: relative;left: 50%;translate: -50%;font-size: 3vw;background-color: rgb(142, 243, 247);border-radius: 50%;cursor: pointer;">
+                    &MediumSpace;&Cross;&MediumSpace;</button>
+            </div>
+        </section>
+    </body>
+</html>
